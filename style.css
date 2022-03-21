@@ -1,25 +1,29 @@
 *{
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
-.background{
-    background-position: center;
-    position: relative;
-    background-size: cover;
-    overflow: hidden;
-    height: 100vh;
-    width: 100%;
+.background>img{
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  width: 100%
 }
+
 .road{
     position: absolute;
     bottom: 0;
-    width: 800px;
+    width: 200%;
+    height: 50px;
+    
     animation: road 1s linear infinite;
+  
 }
 .road img{
-    height: 100px;
+  width: 100%;
 }
-@keyframes road {
+@keyframes road  {
     0%{
         transform: translateX(0);
     }
@@ -29,12 +33,15 @@
 }
 .city{
     position: absolute;
-    bottom: 100px;
-    width: 700px;
+    bottom: 10px;
+    width: 700%;
     animation: city 4s linear infinite;
 }
 .city>img{
     height: 300px;
+    width: 2000px;
+    left: 0;
+    
 }
 @keyframes city {
     0%{
@@ -50,28 +57,28 @@
     z-index: 1;
   
 }
-.car img{
+.car >img{
     width: 400px;
-    height: 200px;
-    transform: translateX(100px);
+    height: 150px;
+    transform: translateX(200px);
 }
 .tyres{
     position: absolute;
-    bottom: 92px;
+    bottom: 85px;
     z-index: 2;
-    transform: translateX(-100px);
+    transform: translateX(-50px);
 }
 .tyres> img{
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
     animation: tyres 1s linear infinite;
 }
  .front-tyre{
-    left: 480px;
+    left: 530px;
     position: absolute;
 }
  .back-tyre{
-    left: 235px;
+    left: 288px;
     position: absolute;
 }
 @keyframes tyres {
@@ -82,3 +89,18 @@
         transform: rotate(360deg)
     }
 }
+@media only screen and (max-width: 576px){
+  .car img{
+    width: 300px;
+    height: 150px;
+    transform: translateX(30px);
+}
+   .front-tyre{
+    left: 290px;
+}
+ .back-tyre{
+    left: 105px;
+}
+
+}
+body{overflow:hidden;}
